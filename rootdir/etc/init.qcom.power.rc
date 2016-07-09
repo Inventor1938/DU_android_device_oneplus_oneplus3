@@ -111,8 +111,8 @@ on enable-low-power
 
     write /sys/module/lpm_levels/parameters/sleep_disabled "N"
 
-    # Set perfd properties
-    setprop sys.post_boot.parsed 1
+    # Set idle GPU to 133 Mhz
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
 
     # Starting io prefetcher service
     start iop
