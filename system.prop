@@ -111,6 +111,8 @@ persist.radio.hw_mbn_update=0
 persist.radio.sw_mbn_update=0
 persist.radio.start_ota_daemon=1
 
+persist.radio.add_power_save=1
+
 # RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
