@@ -24,7 +24,7 @@ audio.offload.gapless.enabled=true
 audio.safx.pbe.enabled=true
 audio.parser.ip.buffer.size=262144
 qcom.hw.aac.encoder=true
-ro.audio.flinger_standbytime_ms=300
+ro.audio.flinger_standbytime_ms=2300
 
 # Battery
 ro.cutoff_voltage_mv=3250
