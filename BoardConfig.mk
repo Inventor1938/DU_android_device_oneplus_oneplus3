@@ -34,6 +34,11 @@ TARGET_OTA_ASSERT_DEVICE := OnePlus3,oneplus3,OnePlus3T,oneplus3t
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
+## Configure SnapDragon Clang
+SDCLANG := true
+SDCLANG_PATH := vendor/qcom/sdclang-3.8/linux-x86/bin
+SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
+SDCLANG_COMMON_FLAGS := -O3 -fvectorize-loops
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
@@ -60,6 +65,9 @@ ENABLE_CPUSETS := true
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Specify kernel toolchain
+TARGET_GCC_VERSION_ARM64 := 4.9
+
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
 BOARD_KERNEL_BASE := 0x80000000
@@ -71,7 +79,7 @@ TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
-TARGET_KERNEL_CONFIG := du_oneplus3_defconfig
+TARGET_KERNEL_CONFIG := radioactive_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # QCOM hardware
