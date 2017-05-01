@@ -23,6 +23,12 @@
 
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
+# ifeq ($(TARGET_PREBUILT_KERNEL),)
+# LOCAL_KERNEL := device/msm8996-kernel/Image.gz-dtb
+# else
+# LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+# endif
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -173,8 +179,9 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    fingerprintd \
-    OneplusPocketMode
+    fingerprintd
+#    fingerprintd \
+#    OneplusPocketMode
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
